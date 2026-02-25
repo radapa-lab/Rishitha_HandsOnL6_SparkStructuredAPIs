@@ -62,11 +62,11 @@ This repository contains the following important files:
 
 The results of all tasks are saved into a file named:
 
-`output.txt`
+`output.txt'
 
 This file is created in the project’s root directory when the code is executed using the output-saving command.
 
-The `output.txt` file contains outputs for:
+The `output.txt' file contains outputs for:
 - Task 1 (User Favorite Genres)
 - Task 2 (Average Listen Time)
 - Task 3 (Top 10 Genre Loyalty Scores)
@@ -179,14 +179,26 @@ Displays the active Java version currently being used in the terminal.
 
 ---
 
-### 4) Temporarily Switch Terminal to Java 17 (For the current terminal session)
+### 4) Switch from Java 25 to Java 17 (Permanent Fix Using Environment Variables)
 
-set JAVA_HOME=C:\Program Files\Eclipse Adoptium\jdk-17.0.18.8-hotspot
-set PATH=%JAVA_HOME%\bin;%PATH%
+Updated System Environment Variables:
 
-**What it does:**  
-Forces the current terminal to use Java 17 by updating JAVA_HOME and putting Java 17 bin first in PATH.  
-(This change applies only to that terminal window.)
+JAVA_HOME = C:\Program Files\Eclipse Adoptium\jdk-17.0.18.8-hotspot
+
+Updated Path variable to include:
+
+%JAVA_HOME%\bin
+
+Removed or moved older Java 25 entries below Java 17 in the Path list.
+
+**What it does:**
+This permanently configures the system to use Java 17 instead of Java 25.
+Spark is compatible with Java 8/11/17, but not fully compatible with Java 25.
+After restarting the terminal, running:
+
+java -version
+
+confirmed that Java 17 was active.
 
 ---
 
